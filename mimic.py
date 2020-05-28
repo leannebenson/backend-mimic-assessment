@@ -47,7 +47,7 @@ def create_mimic_dict(filename):
     create_mimic_dict = {}
     with open(filename) as f:
         words = f.read().split()
-        create_mimic_dict[" "] = [words[0]]
+        create_mimic_dict[''] = [words[0]]
     for i, word in enumerate(words[:-1]):
         if word in create_mimic_dict:
             create_mimic_dict[word].append(words[i+1])
@@ -66,7 +66,14 @@ def print_mimic(mimic_dict, start_word):
         - Repeat this process 200 times
     """
     # +++your code here+++
-    pass
+    for variable_ in range(200):
+        # print start_word,
+        get_words = mimic_dict.get(start_word)
+        if not get_words:
+            get_words = mimic_dict['']
+        start_word = random.choice(get_words)
+    
+    print(start_word)
 
 
 # Provided main(), calls mimic_dict() and print_mimic()
