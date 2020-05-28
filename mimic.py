@@ -68,13 +68,15 @@ def print_mimic(mimic_dict, start_word):
     # +++your code here+++
     for variable_ in range(200):
         # print start_word,
+        print(start_word)
         get_words = mimic_dict.get(start_word)
         if not get_words:
             get_words = mimic_dict['']
         start_word = random.choice(get_words)
     
-    print(start_word)
+    
 
+    return print_mimic
 
 # Provided main(), calls mimic_dict() and print_mimic()
 def main():
